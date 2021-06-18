@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Success Activation</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+
+    <!-- use the font -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+        }
+
+        .cover{
+            background-image: image("../static/images/image12.jpeg");
+            background-size: cover;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<!--            toDo make user page in localhoct:4200-->
+    <div class="cover">
+
+        <div>
+            <p th:text="${'Your email ' + user.getEmail() + ' has been successfully verified'}">
+            </p>
+        </div>
+
+        <div>
+            <p>
+                To go to your account <span th:text="${account}"></span>, click
+                <a th:href="@{'http://localhost:4200/login/' + ${id}}">
+                    here
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
